@@ -1,9 +1,23 @@
-import React from 'react';
+import React from "react";
 
-const List = () => {
+// Import data values here and then map
+const List = (props) => {
+  const { persons } = props;
   return (
     <>
-      <h2>list component</h2>
+      {persons.map((person) => {
+        return (
+          <>
+            <div className="person">
+              <img src={person.image}></img>
+              <div>
+                <h4> {person.name} </h4>
+                <p> {person.age} years </p>
+              </div>
+            </div>
+          </>
+        );
+      })}
     </>
   );
 };
