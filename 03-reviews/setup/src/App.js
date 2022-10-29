@@ -18,12 +18,7 @@ function App() {
   };
   return (
     <main className="container">
-      {reviews[currReview] ? (
-        <Review
-          review={reviews[currReview]}
-          changeReview={changeReview}
-        ></Review>
-      ) : null}
+      <Review review={reviews[currReview]} changeReview={changeReview}></Review>
     </main>
   );
 }
