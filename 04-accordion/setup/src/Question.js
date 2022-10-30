@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
-const Question = ({ question }) => {
-  const { title, info } = question;
+const Question = ({ title, info }) => {
   const [showAnswer, setShowAnswer] = useState(false);
   return (
-    <div className="question" style={{ background: "white" }}>
+    <article className="question" style={{ background: "white" }}>
       <div>
         <header>
           <h4> {title} </h4>
@@ -14,7 +13,7 @@ const Question = ({ question }) => {
         </header>
         {showAnswer ? <p> {info} </p> : ""}
       </div>
-    </div>
+    </article>
   );
 };
 

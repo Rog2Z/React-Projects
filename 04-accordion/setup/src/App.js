@@ -8,17 +8,17 @@ function App() {
         <main>
           <div className="container">
             <h3 class="item">Questions and Answers about Login</h3>
-            <div>
+            <section className="info">
               {data.map((question) => {
-                console.log(question);
                 return (
                   <SingleQuestion
                     key={question.id}
-                    question={question}
+                    {...question}
+                    // {... question!!!!}
                   ></SingleQuestion>
                 );
               })}
-            </div>
+            </section>
           </div>
         </main>
       </div>
