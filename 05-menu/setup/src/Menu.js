@@ -1,7 +1,19 @@
-import React from 'react';
+import React from "react";
 
-const Menu = () => {
-  return <h2>menu component</h2>;
+const Menu = ({ title, price, img, desc }) => {
+  return (
+    <div className="menu-item">
+      <img src={img} alt={title} className="photo"></img>
+      <div className="item-info">
+        <header>
+          <h4>{title}</h4>
+          <p className="price">${price}</p>
+        </header>
+
+        <p className="item-text">{desc}</p>
+      </div>
+    </div>
+  );
 };
 
 export default Menu;

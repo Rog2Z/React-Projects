@@ -1,7 +1,8 @@
-import React from 'react';
+import React from "react";
 
+const hardCodedCat = ["All", "Breakfast", "Lunch", "Shakes"];
 const Categories = () => {
-  return <h2>categories component</h2>;
+  return hardCodedCat.map((category) => {});
 };
 
 export default Categories;
