@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Menu from "./Menu";
 import Categories from "./Categories";
 import items from "./data";
@@ -6,7 +6,22 @@ import { ALL } from "./const";
 console.log(items[0]);
 
 function App() {
+  const [menuItems, setMenuItems] = useState(items);
   const [category, setCategory] = useState(ALL);
+
+  const filterMenuItems = (category) => {
+    if (category === ALL) {
+      setMenuItems(items);
+      return;
+    }
+    const filteredMenu = items.filter((item) => item.category === category);
+    setMenuItems(filteredMenu);
+  };
+
+  useEffect(() => {
+    filterMenuItems(category);
+  }, [category]);
+
   return (
     <section className="menu section">
       <div>
@@ -17,11 +32,8 @@ function App() {
       </div>
       <Categories setCategory={setCategory}></Categories>
       <div className="section-center">
-        {items.map((item) => {
-          if (item && (category === ALL || item.category === category)) {
-            return <Menu key={item.id} {...item}></Menu>;
-          }
-          return null;
+        {menuItems.map((item) => {
+          return <Menu key={item.id} {...item}></Menu>;
         })}
       </div>
     </section>
