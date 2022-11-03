@@ -31,8 +31,10 @@ function App() {
   return (
     <main>
       <section className="container">
-        <div className="title">Reviews</div>
-        <div className="underline"></div>
+        <div className="title">
+          <h2>Reviews</h2>
+          <div className="underline"></div>
+        </div>
         <Review
           review={reviews[currReview]}
           changeReview={changeReview}
