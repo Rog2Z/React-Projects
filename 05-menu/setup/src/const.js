@@ -1,4 +1,4 @@
-export const ALL = "All";
+export const ALL = "all";
 
 /**
  * https://stackoverflow.com/questions/39036457/react-create-constants-file
